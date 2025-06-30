@@ -1,6 +1,7 @@
 import { ErrorState } from '@/components/error-state';
 import { LoadingState } from '@/components/loading-state';
 import { auth } from '@/lib/auth';
+import { MeetingsListHeader } from '@/modules/meetings/ui/components/meetings-list-header';
 import { MeetingsView } from '@/modules/meetings/ui/views/meeting-view';
 import { getQueryClient, trpc } from '@/trpc/server';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
@@ -23,7 +24,7 @@ const page = async () => {
 
     return (
         <>
-            {/* <AgentsListHeader /> */}
+            <MeetingsListHeader />
             <HydrationBoundary state={dehydrate(queryClient)}>
                 <Suspense fallback={<LoadingState title='Loading Meeting' description='This may take a few seconds' />}>
                     <ErrorBoundary fallback={<ErrorState title='Error Loading Meeting' description='Please try again later' />}>
