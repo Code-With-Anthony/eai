@@ -11,11 +11,11 @@ import "@stream-io/video-react-sdk/dist/css/styles.css";
 import { LogInIcon } from "lucide-react";
 import Link from "next/link";
 
-export const CallLobby = ({onJoin}: Props) => {
-    const {useCameraState, useMicrophoneState} = useCallStateHooks();
+export const CallLobby = ({ onJoin }: Props) => {
+    const { useCameraState, useMicrophoneState } = useCallStateHooks();
 
-    const {hasBrowserPermission: hasMicPermission} = useMicrophoneState();
-    const {hasBrowserPermission: hasCamPermission} = useCameraState();
+    const { hasBrowserPermission: hasMicPermission } = useMicrophoneState();
+    const { hasBrowserPermission: hasCamPermission } = useCameraState();
 
     const hasBrowserMediaPermission = hasCamPermission && hasMicPermission;
 
@@ -79,5 +79,4 @@ export const CallLobby = ({onJoin}: Props) => {
             </div>
         </div>
     )
-
 }
